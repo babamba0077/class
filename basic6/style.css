@@ -1,0 +1,101 @@
+*{margin: 0; padding: 0;}
+.치료::after{content: ""; clear: both; display: block;}
+.박일수{
+    width: 1000px;
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: 0 auto; /* 상하0 좌우auto */
+    padding:20px; /* 상하좌우 20px씩 들어감 */
+    padding:20px 40px; /* 상하20 좌우20 */
+    padding:20px 40px 50px; /* 상20 좌우40 하50*/
+    padding:10px 20px 30px 40px; /*상10 우20 하30 좌40*/
+    background-color: #EAC7C7;}
+.박일수 .박첫째{
+    padding: 20px;
+    background-color: #A0C3D2;}
+.박일수 .박첫째 .자식{
+    width: 49%;
+    height: 200px;
+    float: left;
+}    
+.박일수 .박첫째 .자식.첫째자식1{
+    background-color: #0081C9;
+    margin-right: 2%;
+    padding: 20px;
+    box-sizing: border-box; 
+    /* 영역 효과를 박스 안쪽으로 제한 
+    width + padding + border 를 영역안으로 제한*/
+    border: blue solid;
+}
+.박일수 .박첫째 .자식.첫째자식2{
+    background-color: #5BC0F8;
+}
+.박일수 .박첫째 .자식.첫째자식2 object{
+    width: 100%; height: 100%;
+}
+.박일수 .박둘째{
+    background-color: #F7F5EB;
+    padding: 20px;
+    margin-top: 30px; /* =  margin: 30px 0 0; */
+}
+.박일수 .박둘째>div{
+    background-color: #D7E9B9;
+    width: 23.5%;
+    float: left;
+    height: 100px;
+    margin-right: 2%;
+}
+.박일수 .박둘째>div.둘자식1{
+    background-image: url(img.png);
+    background-size: 20px;
+    background-position: 130px 40px; /* x축 y축 */
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+.박일수 .박둘째>div.둘자식1:hover{
+    background-size: 100px;
+    background-position: center center;
+}
+.박일수 .박둘째>div.둘자식2{
+    background: #FFB26B url(img2.png) no-repeat 55px 2px;
+    background-size: 100px; /* 위 background에서 /100과 같음 */
+    transition: 0.3s; /*  시간을 여기다 주는 이유 : 
+             마우스 올릴때+뺄때 둘다 부드럽게 바뀜 */
+}
+.박일수 .박둘째>div.둘자식2:hover{
+    background-image: url(img3.png);
+}
+.박일수 .박둘째>div.둘자식3{
+    overflow: hidden; /* 영역보다 큰 자식요소를 숨김 */
+}
+.박일수 .박둘째>div.둘자식3 iframe{
+    width: 100%;
+}
+.박일수 .박둘째>div.둘자식4{
+    margin-right: 0; /* 위의 margin-right: 2%; 값을 지움 */
+    overflow: hidden;
+}
+.박일수 .박둘째>div.둘자식4 iframe{
+    width: 100%;
+}
+.박일수 .박세째{
+    margin-top: 30px;
+    background-color: #EAE0DA;
+    padding: 20px;
+    color: #FF7B54;
+    text-align: center;
+    line-height: 200px; /* 글이 한줄일 경우 수치조절해서 가운데정렬가능 */
+    font-size: 20px;  /* 글자는 상속이 됨 */
+}
+.박일수 .박세째>div{
+    background-color: #FFFBAC;
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;    
+    float: left;
+}
+.박일수 .박세째>div.세자식1{}
+.박일수 .박세째>div.세자식2{}
+.박일수 .박세째>div.세자식3{
+    margin-right: 0;
+}

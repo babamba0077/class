@@ -1,0 +1,90 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+.치료::after{content: ""; clear: both; display: block;}
+.전체{
+    background-color: #AEBDCA;
+    width: 600px;
+    border: 5px solid #000;
+    margin-left: 100px;
+    margin-top: 200px;
+    position: relative;
+}
+.전체>div{
+    width: 150px;
+    height: 150px;
+}
+.전체 .pink{
+    background-color: #EAC7C7;
+    position: static; /* ←left값을 줘도 움직이지않음 */
+    left: 50px; 
+}
+.전체 .green{
+    background-color: #B5D5C5;
+    position: relative;
+    /* relative : 원래 자신의 위치를 기억함,
+    주위에 아무런 영향을 주지않음
+    left, top의 기준 → 원래 자신의 위치에서 떨어짐을 의미 */
+    left: 250px;
+    top: 50px;
+}
+.전체 .red{
+    background-color: #FD8A8A;
+    position: absolute;
+    /* absolute : 존재없는 요소
+    원래 가진 자신의 영역을 상실
+    조상을 기준으로 삼는데
+    조상이 기준이 되기 위해서는 
+    position: relative, absolute,fixed이면 
+    기준이 될수있다. */
+    left: 100px; top: 100px;
+}
+.전체 .blue{
+    background-color: #89C4E1;
+    position: fixed;
+    right: 150px; top: 100px;
+}
+/*윈도우(화면) 기준으로 배치 
+문서와 별개로 겹쳐질 수 있음 
+ex) 쇼핑몰 퀵메뉴
+부모가 인식하지 못함 → 높이에서 빠짐*/
+
+.영역{
+    margin-top: 150px;
+    background-color: #DEF5E5;
+    border: 5px solid #2C74B3;
+    width: 1000px;
+    margin: 150px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.영역>div{
+    background-color: #9ED5C5; 
+    width: 49%;
+    float: left;
+    height: 300px;
+}
+.영역>div.포지션1{
+    margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+}
+.영역>div.포지션1 .포자{
+    width: 0%;
+    height: 0%;
+    background-color: #FFC6D3;
+    transition: 0.3s;
+    position: absolute;
+    left: 50%; top: 50%; 
+    /* 움직임의 기준→영역 왼쪽 위 모서리 
+    정중앙으로 오기 위해서는 transform이 필요 */
+    transform: translate(-50%,-50%)
+    /* transform:translate(x축,y축); %의 기준은 자신 */
+}
+.영역>div.포지션1:hover .포자{
+    width: 120%;
+    height: 120%;
+}
+
+.space{
+    height: 2000px;
+}

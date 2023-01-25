@@ -1,0 +1,80 @@
+@charset "UTF-8"; /* 한글을 안깨지게 보여줌 */
+
+*{margin: 0; padding: 0;}
+
+/* reset */
+/* 폰트크기의 기본값은 16px */
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+    font-weight: normal; /* 폰트두께 */
+}
+a{
+    text-decoration: none;
+    color: #222;
+} /* 밑줄 제거 */
+
+.약::after{content: ""; clear: both; display: block;}
+/* 가상영역 가상요소  
+::after :after 둘 다 사용 가능*/
+
+.전체{
+    background-color: #579BB1;
+    width: 1000px;
+    margin: 30px auto 0; /* 상 좌우 하 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+.전체>div+div{margin-top: 30px;}
+/* div+div +div는 형제를 나타냄
+형이 있는 +div에게만 스타일 적용됨 */
+
+.전체 .첫째{
+    background-color: #E1D7C6;
+    padding: 20px;
+}
+.전체 .첫째:hover{
+    color: azure;
+}
+/* ::hover로 쓰면 안됨, 가상이지만 첫째는 존재하기 때문
+hover의 효과만 가상으로 존재*/
+
+.전체 .첫째 .첫자{
+    background-color: #3C6255;
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+.전체 .첫째 .첫자.첫째자식1{
+    margin-right: 2%;
+}
+.전체 .첫째 .첫자.첫째자식2{}
+
+.전체 .둘째{
+    background-color: #ECE8DD;
+}
+.전체 .둘째 .앵커{
+    background-color: #61876E;
+}
+.전체 .둘째 p{
+    width: 150px;
+    margin-top: 20px;
+}
+.전체 .둘째 p a{}
+.전체 .둘째 p a img{width: 100%;}
+/* 인라인 요소는 공간을 인식하지 못함
+그래서 넓이, 높이값을 주어도 적용되지 않음
+예외→img, button 테그는 인라인 요소이지만
+넓이와 높이가 적용됨 */
+/* a와 img태그는 인라인요소
+a는 넓이 인식x 따라서 img태그는 그 위의 p의 넓이를 따라감 
+
+인라인요소 안에는 인라인 요소만 들어감
+(블럭요소는 들어가지x) 
+블럭요소 안에는 인라인요소, 블럭요소 모두 들어감
+span p (x)
+p span (o)
+span img (o)  →→ html에서 해당되는 내용!!!
+*/
+.전체 .셋째{
+    background-color: #F8F4EA;
+}

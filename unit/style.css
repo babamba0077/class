@@ -1,0 +1,33 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+:root{
+    /* --(하이픈2개)속성이름:속성값 */
+    --green:#f00;
+    /* 사용 → var(--green) 
+    여러가지 클래스/태그의 속성 값에 변수를 이용하면 한꺼번에 
+    여러가지 값을 변경할 수 있음*/
+    --padding-Top10:10px;
+    --padding-Bottom10:10px;
+}
+.전체{
+    font-size: 1.2em; 
+    /* 16px 곱하기 1.2 = 19px 
+       em = m */
+
+}
+.전체 .첫째{
+    font-size: 0.5em;
+}
+.전체 .첫째 .첫손{
+    background-color: #A0C3D2;
+    color: var(--green);
+    /* font-size: 30vw; */
+    font-size: 0.3rem; 
+    /* r은 root를 의미함
+    html에서의 root는 html요소를 의미함
+    html의 기본 폰트크기는 16px이므로 
+    16px를 기준으로 계산함 → 16 곱하기 0.3 
+    rem = rm */
+    height: 100vh;
+    padding-top: var(--padding-Top10);
+}

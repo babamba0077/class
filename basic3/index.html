@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* css 영역 */
+div{color:blue}
+div.예쁜이{color:pink}
+.멋쟁이{color:greenyellow}
+.넷째 .넷째자식{color:gray}
+
+.넷째 div{
+background-color: aqua; /* 배경색 */
+border: red solid 2px;
+padding: 10px; /* [;] : 마침표 역할, 없으면 오류 뜸 */
+}
+.넷째>div{border-color: green;}
+/* 띄어쓰기 → 자손을 찾는 것
+>(꺽쇠) → 자식을 찾는 것 
+*/
+.막내{margin-top: 50px;}
+.막내 div{border: red solid 2px ;
+padding: 10px}
+.막내>div{ /* 또는 [.막내 .막내자식]으로 입력 가능 */
+    border-color: darkgreen;
+}
+.막내 .막내자식 .막손자{
+    background-color: blueviolet;
+}
+.막내 .막내자식.막자2 .막손자{
+    background-color: darkkhaki;
+} /* 막내자식 and 막자2 : 띄어쓰기x */
+    </style>
+</head>
+<body>
+    <!-- shift + alt + 방향키(↓) : 한줄 복사
+    alt + 방향키(↓ or ↑) : 한줄 위 또는 아래로 이동
+    맨 위 메뉴 Edit → toggle comment
+    태그이름 + tab : 자동태그 설정
+    -->
+    <div class="순둥이">첫번째 줄입니다</div>
+    <div class="예쁜이">두번째 줄입니다</div>
+    <div class="멋쟁이">세번째 줄입니다</div>
+    <div class="넷째">
+        <div class="넷째자식">넷째자식1</div>
+        <div class="넷째자식">넷째자식2</div>
+        <div class="넷째자식">
+            <div class="넷째자식">넷째의 손자</div>
+        </div>
+    </div>
+    <div>
+        <div class="막내">
+            <div class="막내자식 막자1">
+                <div class="막손자">막손자1</div>
+                <div class="막손자">막손자2</div>
+            </div> <!-- .a + tab : 빠른 클래스명 설정 -->
+            <div class="막내자식 막자2">
+                <div class="막손자">막손자3</div>
+                <div class="막손자">막손자4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+ul,ol,li{list-style: none;}
+/* 실무에서는 리스트스타일을 직접 만들어서 넣음 */
+.clear::after{content: ""; clear: both; display: block;}
+#전체{
+    background-color: #C0EEE4;
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+#전체 .첫째자식{
+    background-color: #F8F988;
+    padding: 20px;
+}
+#전체 .첫째자식 .wrap{position: relative;}
+#전체 .첫째자식 .첫째손자{
+    background-image: url(../img01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #FFCAC8;
+    height: 200px;
+}
+#전체 .첫째자식 .첫손2{
+    background-image: url(../img02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #FCDDB0;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    transition: 0.3s;
+    opacity: 0;
+}
+#전체 .첫째자식:hover .첫손2{
+    opacity: 1;
+}
+#전체 .둘째자식{
+    background-color: #DEF5E5;
+    margin-top: 30px;
+    padding: 20px;
+    padding: 200px;
+    box-sizing: border-box; /* 
+    영역안으로 효과 넣음 
+    강제로 넓이를 설정하기 전까지는 
+    기본적으로 셋팅 되어있음*/
+    position: relative;
+}
+#전체 .둘째자식 .둘째손자{
+    background-color: #BCEAD5;
+    width: 100%; /* 기본값 block요소
+    height: 100%; */
+    position: absolute;
+    left: 0; top: 0; /* 자식과 부모와의 간격 */
+    /* → right: 0; bottom: 0; 을 추가로 입력해도 
+    성립되지 않기 때문에 시스템이 알아서 반영시키지 않는다. 
+    넓이 높이 100%일 경우 제외*/
+}
+#전체 .둘째자식{
+    margin-bottom: 50px;
+    /* 형제 클래스들이 붙어있을 경우, 
+    형 마진bottom ↔ 동생 마진top
+    각각 마진의 상하값은 제일 큰 값으로 표현 됨  
+    양 옆 마진(left/right)은 더해서 표현 됨 */
+}
+#전체 .셋째자식{
+    background-color: #F6F6C9;
+    margin-top: 30px;
+}
+#전체 .셋째자식>div{
+    background-color: #BAD1C2;
+    width: 40%;
+    margin: 0 5%; /* 상하0 좌우5% */
+    float: left;
+}
+#전체 .셋째자식{
+    background-color: #4FA095;
+}
+/* ol, ul의 자식요소는 <li>만 가능 */
+#전체 .셋째자식>div ol{
+    list-style-type: lower-roman;
+}
+#전체 .셋째자식>div ul{
+    list-style-type: disc;
+}
+#전체 .셋째자식>div li{
+    border: 1px solid gray;
+}
+#전체 .넷째자식{
+    background-color: #B1AFFF;
+    margin-top: 30px;
+    padding: 20px;
+}
+#전체 .넷째자식 .넷째손자{
+    background-color: #CDFCF6;
+}
+#전체 .넷째자식 .넷째손자 dt{
+    background-color: #BCCEF8;
+}
+#전체 .넷째자식 .넷째손자 dd{
+    background-color: #FAF7F0;
+}

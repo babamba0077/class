@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모자식관계</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .전체{
+            width:600px; /* width 넓이 값 */
+            background-color: aqua;
+            margin: auto; /* 영역을 가운데정렬 */
+            text-align: center; /* 글자를 가운데정렬 */
+            padding: 20px;
+        }
+        .전체{border: red solid 2px;}
+        .전체{background-color: green;}
+        /* 부모는 자식의 높이를 따라감
+        자식은 부모의 넓이를 따라감 */
+        .전체 .첫째{
+            background-color: pink;
+        }
+        .전체 .둘째{
+            background-color: papayawhip;
+            padding: 20px;
+        }
+        .전체 .둘째 .둘자1{
+            float: right;
+            background-color: yellow;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .둘자2{
+            float: right;
+            background-color: orange;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .둘자3{
+            float: right;
+            background-color: skyblue;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .효자{
+            /* 부모의 영역깨짐 방지; left, right, both */
+            clear:both;
+        }
+
+        .전체 .셋째{
+            background-color: lightyellow;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .전체 .셋째::after{
+            /* clear: both; 는 블럭요소에서만 실행됨 
+            before, after은 인라인요소임 
+            때문에 b,a를 블럭요소로 인식하게 해야 함
+            → display: block; 입력 */
+            content: ""; clear: both; display: block;
+        }
+        .전체 .셋째 .세자1{
+            background-color: darkseagreen;
+            width: 50%;
+            float: left;
+        }
+        .전체 .셋째 .세자1 span{
+            background-color: lightblue;
+        }
+        .전체 .셋째 .세자1 span::before{
+            content: "앞";
+        }
+        .전체 .셋째 .세자1 span::after{
+            content: "뒤";
+        }
+        /* css에서 공간을 만들 수 있음 */
+    
+        .전체 .셋째 .세자2{
+            background-color: darksalmon;
+            width: 50%;
+            float: left;
+        }
+        .전체 .셋째 .세자2 span{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="전체">
+        <div class="첫째">첫째</div> <!-- end첫째 -->
+        <div class="둘째">
+            <div class="둘자 둘자1">둘째자식1</div>
+            <div class="둘자 둘자2">둘째자식2</div>
+            <div class="둘자 둘자3">둘째자식3</div>
+            <div class="효자"></div>
+        </div> <!-- end둘째 -->
+        <div class="셋째">
+            <div class="세자 세자1"><span>셋째</span>자식1</div>
+            <div class="세자 세자2"><span>셋째</span>자식2</div>
+        </div> <!-- end셋째 -->
+    </div> <!-- end전체 -->
+</body>
+</html>
